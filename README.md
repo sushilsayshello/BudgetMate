@@ -1,4 +1,6 @@
 # BudgetMate </Br>
+![BudgetMate](https://github.com/user-attachments/assets/a7e43978-bb9d-4d80-8d41-652df41de1b8) </br>
+
 
 <img width="728" alt="Change in House cost" src="https://github.com/user-attachments/assets/9643b471-402a-4358-b210-a9ce1d3a3ade"> </br>
 <img width="1365" alt="Screenshot 2024-09-06 at 11 52 58 pm" src="https://github.com/user-attachments/assets/5849b746-2012-4fe6-a46f-92be7a86cdd3"></br>
