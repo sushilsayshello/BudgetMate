@@ -12,7 +12,6 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
-            scroll-behavior: smooth;
         }
 
         header {
@@ -20,10 +19,6 @@
             color: white;
             padding: 20px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         header img {
@@ -49,13 +44,10 @@
             background-color: #e0f4e9;
             padding: 40px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .hero-section h2 {
             font-size: 36px;
-            animation: slide-in 1.5s ease-out;
         }
 
         .hero-section img {
@@ -64,30 +56,6 @@
             margin: 20px 0;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            animation: zoom-in 1s ease;
-        }
-
-        /* Animations */
-        @keyframes zoom-in {
-            0% {
-                transform: scale(0.9);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-in {
-            0% {
-                transform: translateY(-30px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .features-section {
@@ -116,7 +84,7 @@
         }
 
         .feature img {
-            width: 100%;
+            width: 80px;
             height: auto;
             margin-bottom: 15px;
             border-radius: 10px;
@@ -159,44 +127,6 @@
             }
         }
 
-        /* Feature sections for key features */
-        .onboarding-section,
-        .profile-section,
-        .dashboard-section,
-        .insights-section,
-        .advisor-section,
-        .quests-section,
-        .alerts-section {
-            padding: 40px 20px;
-            background-color: #f0f8ff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .scroll-up {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 10px 15px;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .scroll-up.visible {
-            display: block;
-        }
-
     </style>
 </head>
 <body>
@@ -215,53 +145,55 @@
         <img src="https://via.placeholder.com/600x400" alt="BudgetMate App Interface">
     </section>
 
-    <!-- Onboarding Section -->
-    <section class="onboarding-section">
-        <h2 class="section-title">User Onboarding</h2>
-        <p>Sign up or log in to BudgetMate. Connect your accounts via Akahu and provide basic financial details to get started.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Onboarding Process">
-    </section>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Track Spending">
+            <h3>Track Your Spending</h3>
+            <p>Monitor where your money is going with detailed spending reports and analysis by category.</p>
+        </div>
 
-    <!-- Profile Setup Section -->
-    <section class="profile-section">
-        <h2 class="section-title">User Profile Setup</h2>
-        <p>Complete a financial personality quiz to help BudgetMate categorize you based on your spending, saving, and earning habits.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Profile Setup">
-    </section>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Set Savings Goals">
+            <h3>Set Savings Goals</h3>
+            <p>Define custom savings goals and track your progress toward reaching them.</p>
+        </div>
 
-    <!-- Dashboard Section -->
-    <section class="dashboard-section">
-        <h2 class="section-title">Dashboard Overview</h2>
-        <p>See all your financial metrics at a glance, including your financial health score, savings goals, and spending insights.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Dashboard View">
-    </section>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Spending Insights">
+            <h3>Spending Insights</h3>
+            <p>Get insights into your spending behavior, with breakdowns by category and comparisons to national averages.</p>
+        </div>
 
-    <!-- Spending Insights Section -->
-    <section class="insights-section">
-        <h2 class="section-title">Spending Insights</h2>
-        <p>Analyze your spending behavior with detailed insights by category, such as groceries, entertainment, and utilities. Compare with national averages.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Spending Insights">
-    </section>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Smart Advisor">
+            <h3>Smart Advisor</h3>
+            <p>Ask our AI-powered Smart Advisor for personalized financial tips and advice based on your data.</p>
+        </div>
 
-    <!-- Smart Advisor Section -->
-    <section class="advisor-section">
-        <h2 class="section-title">Smart Advisor Interaction</h2>
-        <p>Ask questions and get personalized advice using AI-powered Smart Advisor, tailored to your specific financial data.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Smart Advisor Interaction">
-    </section>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Financial Health Score">
+            <h3>Financial Health Score</h3>
+            <p>Track your overall financial health with a simple score based on your income, expenses, savings, and debt.</p>
+        </div>
 
-    <!-- Quests and Achievements Section -->
-    <section class="quests-section">
-        <h2 class="section-title">Quests and Achievements</h2>
-        <p>Take on financial quests to save more or spend less. Unlock achievements and rewards as you reach your financial goals.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Quests and Achievements">
-    </section>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Quests and Achievements">
+            <h3>Quests & Achievements</h3>
+            <p>Take part in financial quests and unlock achievements as you hit savings goals and manage your money better.</p>
+        </div>
 
-    <!-- Alerts Section -->
-    <section class="alerts-section">
-        <h2 class="section-title">Alerts & Recommendations</h2>
-        <p>Receive custom alerts based on your financial habits. Get real-time recommendations to improve your financial well-being.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Alerts & Recommendations">
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Alerts">
+            <h3>Alerts</h3>
+            <p>Get real-time alerts on overspending, upcoming bills, and important financial milestones.</p>
+        </div>
+
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Bank Integration">
+            <h3>Bank Account Integration</h3>
+            <p>Securely connect your bank accounts and cards via Akahu for real-time updates and spending tracking.</p>
+        </div>
     </section>
 
     <!-- CTA Section -->
@@ -276,26 +208,6 @@
     <footer>
         <p>&copy; 2024 BudgetMate. All Rights Reserved.</p>
     </footer>
-
-    <!-- Scroll-Up Button -->
-    <button class="scroll-up" id="scroll-up">&#8679;</button>
-
-    <script>
-        // Show "scroll up" button when scrolling down
-        const scrollUpBtn = document.getElementById('scroll-up');
-        window.onscroll = function() {
-            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                scrollUpBtn.classList.add('visible');
-            } else {
-                scrollUpBtn.classList.remove('visible');
-            }
-        };
-
-        // Scroll to top when clicking the button
-        scrollUpBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    </script>
 
 </body>
 </html>
