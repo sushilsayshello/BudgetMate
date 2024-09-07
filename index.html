@@ -12,13 +12,18 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #000;
+            background-color: #2c3e50;
             color: white;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header img {
@@ -29,6 +34,7 @@
             font-size: 48px;
             margin: 10px 0;
             color: #4CAF50;
+            font-weight: bold;
         }
 
         h2, h3 {
@@ -41,13 +47,23 @@
         }
 
         .hero-section {
-            background-color: #e0f4e9;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #00b894, #0984e3);
+            padding: 60px 20px;
             text-align: center;
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
         }
 
         .hero-section h2 {
-            font-size: 36px;
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
         }
 
         .hero-section img {
@@ -55,7 +71,7 @@
             max-width: 600px;
             margin: 20px 0;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         .features-section {
@@ -67,63 +83,80 @@
         }
 
         .feature {
-            width: 30%;
+            width: 28%;
             text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            border-radius: 10px;
-            position: relative;
-            transition: transform 0.3s ease;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature:hover {
             transform: translateY(-10px);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .feature img {
-            width: 80px;
+            width: 60px;
             height: auto;
-            margin-bottom: 15px;
-            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #4CAF50;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #777;
         }
 
         .cta-section {
             text-align: center;
-            padding: 40px 20px;
-            background-color: #4CAF50;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0984e3, #6c5ce7);
             color: white;
         }
 
         .cta-section button {
-            background-color: #fff;
-            color: #4CAF50;
+            background-color: #4CAF50;
+            color: white;
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             margin: 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .cta-section button:hover {
-            background-color: #3e8e41;
-            color: white;
+            background-color: #2d98da;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
 
         footer {
-            background-color: #000;
+            background-color: #2c3e50;
             color: white;
             padding: 20px;
             text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
         }
 
         @media only screen and (max-width: 768px) {
             .feature {
                 width: 80%;
+                margin: 20px auto;
             }
         }
 
@@ -148,49 +181,49 @@
     <!-- Features Section -->
     <section class="features-section">
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Track Spending">
+            <img src="https://via.placeholder.com/60" alt="Track Spending">
             <h3>Track Your Spending</h3>
             <p>Monitor where your money is going with detailed spending reports and analysis by category.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Set Savings Goals">
+            <img src="https://via.placeholder.com/60" alt="Set Savings Goals">
             <h3>Set Savings Goals</h3>
             <p>Define custom savings goals and track your progress toward reaching them.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Spending Insights">
+            <img src="https://via.placeholder.com/60" alt="Spending Insights">
             <h3>Spending Insights</h3>
             <p>Get insights into your spending behavior, with breakdowns by category and comparisons to national averages.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Smart Advisor">
+            <img src="https://via.placeholder.com/60" alt="Smart Advisor">
             <h3>Smart Advisor</h3>
             <p>Ask our AI-powered Smart Advisor for personalized financial tips and advice based on your data.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Financial Health Score">
+            <img src="https://via.placeholder.com/60" alt="Financial Health Score">
             <h3>Financial Health Score</h3>
             <p>Track your overall financial health with a simple score based on your income, expenses, savings, and debt.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Quests and Achievements">
+            <img src="https://via.placeholder.com/60" alt="Quests and Achievements">
             <h3>Quests & Achievements</h3>
             <p>Take part in financial quests and unlock achievements as you hit savings goals and manage your money better.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Alerts">
+            <img src="https://via.placeholder.com/60" alt="Alerts">
             <h3>Alerts</h3>
             <p>Get real-time alerts on overspending, upcoming bills, and important financial milestones.</p>
         </div>
 
         <div class="feature">
-            <img src="https://via.placeholder.com/80" alt="Bank Integration">
+            <img src="https://via.placeholder.com/60" alt="Bank Integration">
             <h3>Bank Account Integration</h3>
             <p>Securely connect your bank accounts and cards via Akahu for real-time updates and spending tracking.</p>
         </div>
