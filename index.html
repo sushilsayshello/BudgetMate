@@ -1,1 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BudgetMate - Take control of your financial future">
+    <title>BudgetMate - Personal Finance Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
 
+        header {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 10px 0;
+            color: #4CAF50;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .hero-section {
+            background-color: #e0f4e9;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section h2 {
+            font-size: 36px;
+            animation: slide-in 1.5s ease-out;
+        }
+
+        .hero-section img {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            animation: zoom-in 1s ease;
+        }
+
+        /* Animations */
+        @keyframes zoom-in {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .features-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 0;
+            padding: 0 20px;
+        }
+
+        .feature {
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .cta-section button {
+            background-color: #fff;
+            color: #4CAF50;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-section button:hover {
+            background-color: #3e8e41;
+            color: white;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .feature {
+                width: 80%;
+            }
+        }
+
+        /* Feature sections for key features */
+        .onboarding-section,
+        .profile-section,
+        .dashboard-section,
+        .insights-section,
+        .advisor-section,
+        .quests-section,
+        .alerts-section {
+            padding: 40px 20px;
+            background-color: #f0f8ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .scroll-up.visible {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Logo -->
+    <header>
+        <img src="BudgetMate.png" alt="BudgetMate Logo">
+        <h1>BudgetMate</h1>
+        <p>Take Control of Your Financial Future</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h2>Your Financial Companion</h2>
+        <p>Track your spending, set savings goals, and get personalized financial advice with BudgetMate.</p>
+        <img src="https://via.placeholder.com/600x400" alt="BudgetMate App Interface">
+    </section>
+
+    <!-- Onboarding Section -->
+    <section class="onboarding-section">
+        <h2 class="section-title">User Onboarding</h2>
+        <p>Sign up or log in to BudgetMate. Connect your accounts via Akahu and provide basic financial details to get started.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Onboarding Process">
+    </section>
+
+    <!-- Profile Setup Section -->
+    <section class="profile-section">
+        <h2 class="section-title">User Profile Setup</h2>
+        <p>Complete a financial personality quiz to help BudgetMate categorize you based on your spending, saving, and earning habits.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Profile Setup">
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <h2 class="section-title">Dashboard Overview</h2>
+        <p>See all your financial metrics at a glance, including your financial health score, savings goals, and spending insights.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Dashboard View">
+    </section>
+
+    <!-- Spending Insights Section -->
+    <section class="insights-section">
+        <h2 class="section-title">Spending Insights</h2>
+        <p>Analyze your spending behavior with detailed insights by category, such as groceries, entertainment, and utilities. Compare with national averages.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Spending Insights">
+    </section>
+
+    <!-- Smart Advisor Section -->
+    <section class="advisor-section">
+        <h2 class="section-title">Smart Advisor Interaction</h2>
+        <p>Ask questions and get personalized advice using AI-powered Smart Advisor, tailored to your specific financial data.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Smart Advisor Interaction">
+    </section>
+
+    <!-- Quests and Achievements Section -->
+    <section class="quests-section">
+        <h2 class="section-title">Quests and Achievements</h2>
+        <p>Take on financial quests to save more or spend less. Unlock achievements and rewards as you reach your financial goals.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Quests and Achievements">
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="alerts-section">
+        <h2 class="section-title">Alerts & Recommendations</h2>
+        <p>Receive custom alerts based on your financial habits. Get real-time recommendations to improve your financial well-being.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Alerts & Recommendations">
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Get Started Today</h2>
+        <p>Take the first step towards financial freedom.</p>
+        <button>Download the App</button>
+        <button>Get Started</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BudgetMate. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scroll-Up Button -->
+    <button class="scroll-up" id="scroll-up">&#8679;</button>
+
+    <script>
+        // Show "scroll up" button when scrolling down
+        const scrollUpBtn = document.getElementById('scroll-up');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                scrollUpBtn.classList.add('visible');
+            } else {
+                scrollUpBtn.classList.remove('visible');
+            }
+        };
+
+        // Scroll to top when clicking the button
+        scrollUpBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+
+</body>
+</html>
