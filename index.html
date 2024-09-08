@@ -3,244 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BudgetMate - Take control of your financial future">
-    <title>BudgetMate - Personal Finance Management</title>
+    <title>BudgetMate - Take Control of Your Finances</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
             color: #333;
-            overflow-x: hidden;
         }
 
         header {
-            background-color: #2c3e50;
+            background-color: #007bff;
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
         }
 
-        header img {
-            width: 100px;
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
 
-        h1 {
-            font-size: 48px;
-            margin: 10px 0;
-            color: #4CAF50;
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
         }
 
-        h2, h3 {
-            color: #333;
+        nav ul li a:hover {
+            color: #ffdf00;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1556740714-a8395b3bf30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007bff;
         }
 
         p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #00b894, #0984e3);
-            padding: 60px 20px;
-            text-align: center;
-            color: white;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-
-        .hero-section h2 {
-            font-size: 42px;
+            font-size: 1.2em;
             margin-bottom: 20px;
-            font-weight: 700;
+            color: #333;
         }
 
-        .hero-section p {
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
-
-        .hero-section img {
+        img {
             width: 100%;
             max-width: 600px;
-            margin: 20px 0;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .features-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 50px 0;
-            padding: 0 20px;
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .feature {
-            width: 28%;
-            text-align: center;
-            padding: 30px;
             background-color: white;
+            padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease;
         }
 
         .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature img {
-            width: 60px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #4CAF50;
-        }
-
-        .feature p {
-            font-size: 16px;
-            color: #777;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #0984e3, #6c5ce7);
-            color: white;
-        }
-
-        .cta-section button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            margin: 10px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-section button:hover {
-            background-color: #2d98da;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         footer {
-            background-color: #2c3e50;
+            background-color: #007bff;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 20px 0;
             margin-top: 50px;
         }
 
         footer p {
             margin: 0;
-            font-size: 16px;
         }
 
-        @media only screen and (max-width: 768px) {
-            .feature {
-                width: 80%;
-                margin: 20px auto;
-            }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
         }
 
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .contact-form {
+            background-color: #f1f1f1;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .calculator button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .calculator button:hover {
+            background-color: #0056b3;
+        }
+
+        .calculator p {
+            font-size: 1.2em;
+            color: #28a745;
+            margin-top: 20px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
-    <!-- Header Section with Logo -->
+
+    <!-- Header -->
     <header>
-    <img src="https://github.com/user-attachments/assets/a7e43978-bb9d-4d80-8d41-652df41de1b80" alt="BudgetMate App Logo">
-        
-        <h1>BudgetMate</h1>
-        <p>Take Control of Your Financial Future</p>
+        <div class="container">
+            <h1>BudgetMate</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#data-insights">Data Insights</a></li>
+                    <li><a href="#calculator">Savings Calculator</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <h2>Your Financial Companion</h2>
-        <p>Track your spending, set savings goals, and get personalized financial advice with BudgetMate.</p>
-        <img src="https://github.com/user-attachments/assets/a7e43978-bb9d-4d80-8d41-652df41de1b80" alt="BudgetMate App Interface">
+    <section class="hero">
+        <div class="container">
+            <h2>Take Control of Your Finances</h2>
+            <p>Empowering Kiwis with personalized financial insights</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About BudgetMate</h2>
+            <p>BudgetMate is a personal finance management tool built specifically for New Zealanders. It helps users track their spending, set savings goals, and receive AI-powered advice on how to improve their financial health.</p>
+            <img src="https://images.unsplash.com/photo-1565510405150-86a03385f8a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="About BudgetMate">
+        </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section">
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Track Spending">
-            <h3>Track Your Spending</h3>
-            <p>Monitor where your money is going with detailed spending reports and analysis by category.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Set Savings Goals">
-            <h3>Set Savings Goals</h3>
-            <p>Define custom savings goals and track your progress toward reaching them.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Spending Insights">
-            <h3>Spending Insights</h3>
-            <p>Get insights into your spending behavior, with breakdowns by category and comparisons to national averages.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Smart Advisor">
-            <h3>Smart Advisor</h3>
-            <p>Ask our AI-powered Smart Advisor for personalized financial tips and advice based on your data.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Financial Health Score">
-            <h3>Financial Health Score</h3>
-            <p>Track your overall financial health with a simple score based on your income, expenses, savings, and debt.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Quests and Achievements">
-            <h3>Quests & Achievements</h3>
-            <p>Take part in financial quests and unlock achievements as you hit savings goals and manage your money better.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Alerts">
-            <h3>Alerts</h3>
-            <p>Get real-time alerts on overspending, upcoming bills, and important financial milestones.</p>
-        </div>
-
-        <div class="feature">
-            <img src="https://via.placeholder.com/60" alt="Bank Integration">
-            <h3>Bank Account Integration</h3>
-            <p>Securely connect your bank accounts and cards via Akahu for real-time updates and spending tracking.</p>
+    <section id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <h3>Spend Pattern Analysis</h3>
+                    <p>Analyze your spending habits and discover areas where you can save more.</p>
+                    <img src="https://images.unsplash.com/photo-1581090129263-0b1da978a9ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Spending Analysis">
+                </div>
+                <div class="feature">
+                    <h3>Smart Financial Advisor</h3>
+                    <p>Get personalized advice on budgeting, saving, and managing your finances.</p>
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Smart Financial Advisor">
+                </div>
+                <div class="feature">
+                    <h3>Real-Time Financial Health Score</h3>
+                    <p>Monitor your financial health with an easy-to-understand score.</p>
+                    <img src="https://images.unsplash.com/photo-1572567730914-1cb1d9a65e32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Financial Health Score">
+                </div>
+                <div class="feature">
+                    <h3>Custom Reports</h3>
+                    <p>Generate detailed financial reports to track your progress.</p>
+                    <img src="https://images.unsplash.com/photo-1560240323-daf50d6f9fca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Custom Reports">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Get Started Today</h2>
-        <p>Take the first step towards financial freedom.</p>
-        <button>Download the App</button>
-        <button>Get Started</button>
+    <!-- Data Insights Section -->
+    <section id="data-insights">
+        <div class="container">
+            <h2>Data Insights</h2>
+            <p>Using real-time data from Stats NZ, BudgetMate compares your spending, savings, and financial habits with the national averages. This gives you a clear perspective on how you can optimize your finances.</p>
+            <img src="https://images.unsplash.com/photo-1546888747-4c9e5b090924?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Data Insights">
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator">
+        <div class="container">
+            <h2>Savings Calculator</h2>
+            <div class="calculator">
+                <h3>How much can you save?</h3>
+                <input type="number" id="income" placeholder="Enter your monthly income">
+                <input type="number" id="expenses" placeholder="Enter your monthly expenses">
+                <button onclick="calculateSavings()">Calculate Savings</button>
+                <p id="result"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <h3>Get in Touch</h3>
+                <form action="mailto:info@budgetmate.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 BudgetMate. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 BudgetMate - All Rights Reserved</p>
+        </div>
     </footer>
+
+    <script>
+        // JavaScript for the savings calculator
+        function calculateSavings() {
+            const income = document.getElementById('income').value;
+            const expenses = document.getElementById('expenses').value;
+            if (income && expenses) {
+                const savings = income - expenses;
+                document.getElementById('result').textContent = `You can save $${savings} every month.`;
+            } else {
+                document.getElementById('result').textContent = 'Please enter both income and expenses.';
+            }
+        }
+    </script>
 
 </body>
 </html>
